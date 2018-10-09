@@ -38,7 +38,7 @@ if __name__ == "__main__":
             subject = "Job positions for today."
             body = body + job
         else:
-            subject = "No junior job positions."
+            subject = "No job positions."
             
 
 
