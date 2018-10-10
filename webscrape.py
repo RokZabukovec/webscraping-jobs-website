@@ -5,15 +5,16 @@ from bs4 import BeautifulSoup
 soup = BeautifulSoup('html.parser')
 import urllib2
 
-def sendJobs(to, subject, body):
+def sendJobs(to, subject, body, mail, password):
     """ For sending results of a web scraping to email"""
-    yag = yagmail.SMTP('rok.zabukovec.it@gmail.com', 'Chemistryforgood1')
+    yag = yagmail.SMTP(mail, password)
     # --sending the message
     yag.send(to = to, subject = subject, contents = body)
 
 
 
 if __name__ == "__main__":
+    mail = "kzabuk@gmail.com"
     jobs = ""
     url = 'https://slo-tech.com/delo'
     response = urllib2.urlopen(url)
@@ -42,4 +43,4 @@ if __name__ == "__main__":
             
 
 
-sendJobs("kzabuk@gmail.com", subject, body)
+sendJobs(mail, subject, body, email, password )
